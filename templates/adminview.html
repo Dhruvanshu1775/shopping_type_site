@@ -1,0 +1,78 @@
+{% extends 'succes_login.html' %}
+{% block content %}
+{% for dump in messages %}
+  {% if 'delet' in dump.tags %}
+    <div class="alert alert-success" role="alert">
+      {{dump}}  
+    </div>
+  {% endif %}
+{% endfor %}    
+{% for smp in messages %}
+  {% if 'done1' in dump.tags %}
+      <div class="alert alert-success" role="alert">
+      {{smp}}  
+      </div>
+  {% endif %}
+{% endfor %}
+<html>
+    <html>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>    
+              
+
+        <style>
+        table, th, td {
+            border: 1px solid black;
+            margin: 2px;
+            align-items: center;
+          }
+        </style> 
+        <div class="row register-form">
+        <div class="col-md-8 offset-md-2">    
+        <table style="">
+        <div class="container">
+        <div class="row align-items-start">
+            <h1>CUSTOMER ORDER DETAILS</h1>
+        <div class="col"> 
+                    <tr >
+                        <th class="alert alert-primary">ID</th>
+                        <th class="alert alert-primary">Username</th>
+                        <th class="alert alert-primary">Product Name</th>
+                        <th class="alert alert-primary">Product Price</th>
+                        <th class="alert alert-primary">Quantity</th>
+                        <th class="alert alert-primary">Total Price</th>
+                        <th class="alert alert-primary">Address</th>
+                        <th class="alert alert-primary">Number</th>
+                        <th class="alert alert-primary">Operations</th>
+                    </tr>
+        </div></div>
+                    {% for stu in skt %}
+                    <tr>
+                        <td class="alert alert-success">{{ stu.id }}</td>
+                        <td class="alert alert-success">{{ stu.username }}</td>
+                        <td class="alert alert-success">{{ stu.product_name }}</td>
+                        <td class="alert alert-success">{{ stu.productprice }}</td>
+                        <td class="alert alert-success">{{ stu.quantity }}</td>
+                        <td class="alert alert-success">{{ stu.total_price }}</td>
+                        <td class="alert alert-success">{{ stu.address }}</td>
+                        <td class="alert alert-success">{{ stu.number }}</td>
+                        <td class="alert alert-success"><div class="btn-group" role="group" aria-label="Basic example">
+                            <a href="/insert/{{stu.id}}{{stu.username}}"><button type="button" class="btn btn-primary">INSERT</button></a>
+                          </div>
+                        
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a href="/delete/{{stu.id}}{{stu.username}}"><button type="button" class="btn btn-primary">Delete</button></a>
+                          </div>
+                        </td>       
+                    </tr>
+                    {% endfor %}
+        
+                </table>
+                </div>
+                </div>
+    
+                
+                
+                     
+</html>
+{% endblock %}

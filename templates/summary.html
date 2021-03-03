@@ -1,0 +1,14 @@
+{% extends 'succes_login.html' %}
+{% block content %}
+<html>
+    <h1>hello</h1>
+    {%for fm in messages%}
+    {% if 'done' in fm.tags %}
+    <div class="alert alert-success" role="alert">
+        {{ fm }}
+      </div>
+    {% endif %}
+    {% endfor %}
+</html>
+
+{% endblock %}

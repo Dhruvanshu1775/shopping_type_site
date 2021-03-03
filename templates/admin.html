@@ -1,0 +1,15 @@
+<html>
+    <h1>Hello admin</h1>
+</html>
+
+
+{% for object in skt %}
+   
+       
+   <h2>{{ object.first_name}}</h2>
+    <h2>{{object.last_name}}</h2>    
+    <h2>{{object.email}}</h2> {
+    <h2>{{ object.password}}</h2>
+       
+   
+{% endfor %}
